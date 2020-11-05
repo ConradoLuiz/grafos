@@ -22,7 +22,7 @@ def dfs(g, node):
         n = pilha[-1]
         pilha.pop(-1)
         if n not in visitados:
-            print(n)
+            print(n, end=' ')
             visitados.append(n)
             for adjacente in sorted(g[n], reverse=True):
                 if adjacente not in visitados:
@@ -32,12 +32,12 @@ def dfs(g, node):
 if __name__ == "__main__":
     g1 = Graph()
 
-    g1.adicionaAresta(0, 1)
-    g1.adicionaAresta(0, 2)
-    g1.adicionaAresta(1, 2)
-    g1.adicionaAresta(2, 0)
-    g1.adicionaAresta(2, 3)
-    g1.adicionaAresta(3, 3)
+    g1.adicionaArco(0, 1)
+    g1.adicionaArco(0, 2)
+    g1.adicionaArco(1, 2)
+    g1.adicionaArco(2, 0)
+    g1.adicionaArco(2, 3)
+    g1.adicionaArco(3, 3)
 
     print(g1)
     print('DFS Recursivo:')
@@ -48,12 +48,12 @@ if __name__ == "__main__":
     print('--------------')
 
     g2 = Graph()
-    g2.adicionaAresta(2, 0)
-    g2.adicionaAresta(0, 2)
-    g2.adicionaAresta(1, 2)
-    g2.adicionaAresta(0, 1)
-    g2.adicionaAresta(3, 3)
-    g2.adicionaAresta(1, 3)
+    g2.adicionaArco(2, 0)
+    g2.adicionaArco(0, 2)
+    g2.adicionaArco(1, 2)
+    g2.adicionaArco(0, 1)
+    g2.adicionaArco(3, 3)
+    g2.adicionaArco(1, 3)
 
     print(g2)
     print('DFS Recursivo:')

@@ -9,8 +9,12 @@ class Graph():
     def __init__(self):
         self.graph = defaultdict(list)
 
+    def adicionaArco(self, origem, destino):
+        self.graph[origem].append(destino)
+
     def adicionaAresta(self, origem, destino):
         self.graph[origem].append(destino)
+        self.graph[destino].append(origem)
 
     def __str__(self):
         return_str = ''
@@ -25,18 +29,18 @@ class Graph():
 if __name__ == "__main__":
     g = Graph()
 
-    g.adicionaAresta(1, 5)
-    g.adicionaAresta(5, 1)
-    g.adicionaAresta(1, 4)
-    g.adicionaAresta(4, 1)
-    g.adicionaAresta(1, 2)
-    g.adicionaAresta(2, 1)
-    g.adicionaAresta(2, 7)
-    g.adicionaAresta(7, 2)
-    g.adicionaAresta(2, 6)
-    g.adicionaAresta(6, 2)
-    g.adicionaAresta(2, 3)
-    g.adicionaAresta(3, 2)
+    g.adicionaArco(1, 5)
+    g.adicionaArco(5, 1)
+    g.adicionaArco(1, 4)
+    g.adicionaArco(4, 1)
+    g.adicionaArco(1, 2)
+    g.adicionaArco(2, 1)
+    g.adicionaArco(2, 7)
+    g.adicionaArco(7, 2)
+    g.adicionaArco(2, 6)
+    g.adicionaArco(6, 2)
+    g.adicionaArco(2, 3)
+    g.adicionaArco(3, 2)
 
     print(g)
 
